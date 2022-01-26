@@ -37,7 +37,6 @@ class Favorites extends Component {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 this.setState({ link: data.id })
             })
     }
@@ -48,25 +47,23 @@ class Favorites extends Component {
                 <input value={this.state.title} className="favorites__name" placeholder="Новый список" onChange={this.changeTitle} />
                 <ul className="favorites__list">
                     {this.props.movies && this.props.movies.map((item, index) => {
-                        return <div className='fav'>
-                            <li key={item.imdbID}>{item.Title} ({item.Year})</li>
+                        return <div className='fav' key={item.imdbID}>
+                            <li>{item.Title} ({item.Year})</li>
                             <button className="btn-del" onClick={() => this.removeFromFavorites(index)}>x</button>
                             </div>;
                     })}
                 </ul>
                 {this.state.link ? 
-                <div>
-                    <Link to={`/list/${this.state.link}`}>{this.state.title}</Link>
-                </div> : <button type="button" className="favorites__save" onClick={this.addNewList}>Сохранить список</button>}
-                
-                
+                    <div>
+                        <Link to={`/list/${this.state.link}`}>{this.state.title}</Link>
+                    </div> : <button type="button" className="favorites__save" onClick={this.addNewList}>Сохранить список</button>
+                }
             </div>
         );
     }
 }
  
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
       movies: state.favorites
     }

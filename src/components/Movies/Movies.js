@@ -24,7 +24,7 @@ class Movies extends Component {
             <ul className="movies">
                 {this.props.movies && this.props.movies.map((movie) => (
                     <li className="movies__item" key={movie.imdbID}>
-                        <MovieItem {...movie} addToFavorites={this.addToFavorites} />
+                        <MovieItem {...movie} addToFavorites={(this.addToFavorites)} />
                     </li>
                 ))}
             </ul>
