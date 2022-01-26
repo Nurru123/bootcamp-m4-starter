@@ -26,8 +26,24 @@
     transition: all 0.2s linear;
 }
 
-.favorites__save:hover {
+.favorites__save:hover, .btn-del:hover {
     cursor: pointer;
     opacity: 0.9;
     transition: all 0.2s linear;
+}
+
+.fav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.btn-del {
+    border: none;
+    background-color: #496DDB;
+    color: #FFEEDB;
+    font-size: 14px;
+    transition: all 0.2s linear;
+    width: 18px;
+    height: 18px;
 }

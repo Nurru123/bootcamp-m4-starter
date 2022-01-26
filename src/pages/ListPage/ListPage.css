@@ -3,6 +3,7 @@
 }
 
 .list-page__title {
+    font-weight: 500;
     font-size: 34px;
     margin-bottom: 26px;
 }
