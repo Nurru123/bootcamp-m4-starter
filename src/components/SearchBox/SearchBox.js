@@ -14,7 +14,9 @@ class SearchBox extends Component {
         e.preventDefault();
         fetch(`http://www.omdbapi.com/?s=${this.state.searchLine}&apikey=c44e99fe`)
         .then(res => res.json())
-        .then(data => store.dispatch(searchMovie(data.Search)))
+        .then(data => {
+            console.log(data)
+            store.dispatch(searchMovie(data.Search))})
     }
     render() {
         const { searchLine } = this.state;
